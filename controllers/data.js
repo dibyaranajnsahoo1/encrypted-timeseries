@@ -4,6 +4,9 @@ const db = require("../services/connection");
 var moment = require("moment");
 
 module.exports = {
+   
+    
+
      getTimeseriesData: async (req, res, next) => {
          try{
             const collection = db.collection("encrypted-timeseries-collection");
@@ -44,6 +47,8 @@ module.exports = {
                     data: "pass timestamp"
                 })
             }
+
+            
         }catch(err){
             return res.status(500).json({
                 status: false,

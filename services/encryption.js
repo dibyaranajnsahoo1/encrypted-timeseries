@@ -23,6 +23,8 @@ const encryptionService = () => {
         return hash.update(text, 'utf-8').digest('hex')
     }
 
+    
+
     const compareSHA256Hash = (shatext, text) => {
         return shatext == createSHA256Hash(text);
     }

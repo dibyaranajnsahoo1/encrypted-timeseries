@@ -7,7 +7,9 @@ const client = redis.createClient({
 
 client.on("error", (error) => console.error(error));
 
+
 const redisOperationService = () => {
+
 
     const save = async (key, value) => {
         try{
@@ -26,6 +28,8 @@ const redisOperationService = () => {
         }
     };
 
+
+
     const retrieve = async (key) => {
         let retrievePromise = new Promise((resolve, reject) => {
             client.get(key, async (err, data) => {
@@ -39,6 +43,7 @@ const redisOperationService = () => {
         const data = await retrievePromise;
         return data;
     };
+
 
     const getRedisKeys = async () =>{
         let getRedisKeyPromise = new Promise((resolve, reject) => {
@@ -75,5 +80,6 @@ const redisOperationService = () => {
         deleteWithKey
     };
 }
+
 
 module.exports = redisOperationService;

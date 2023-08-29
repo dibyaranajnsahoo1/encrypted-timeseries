@@ -1,12 +1,15 @@
 const express = require("express");
 const indexRouter = express.Router();
 
+
 const { 
   getTimeseriesData,
   getSpecificTimeData
 } = require('../controllers/data')
 
-/* GET home page. */
+
+
+/* GET home page. *//
 indexRouter.get("/", function (req, res, next) {
   return res.send({ title: "apis are up" });
 });

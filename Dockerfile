@@ -7,12 +7,10 @@ COPY . /timeseries-app
 #Install build essentials for redis
 RUN apk add musl-dev gcc make g++ zlib-dev linux-headers
 
-#Redis Installation script
-RUN sh /timeseries-app/install-redis.sh
-
 #Setting Work Dir as timeseries-app
 WORKDIR /timeseries-app
-
+#Redis Installation script
+RUN sh /timeseries-app/install-redis.sh
 #Installing node_modules
 RUN npm install
 
