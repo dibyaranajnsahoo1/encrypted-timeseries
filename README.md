@@ -94,10 +94,10 @@ Use the package manager [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.
 
 Go to the directory where you would like to clone the [repo](https://github.com/KunjManiar/encrypted-timeseries.git).
 
-Install node and npm
-Install and run redis server on machine
-npm i
-npm start
+<p>Install node and npm<p>
+<p>Install and run redis server on machine<p>
+<p>npm i<p>
+<p>npm start<p>
 ## Run the app with docker
 docker build -t encrypted-timeseries-application .
 docker run -p 3000:3000 encrypted-timeseries-application
