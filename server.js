@@ -7,8 +7,12 @@ const app = express();
 const http = require('http');
 const socketIO = require('socket.io');
 const crypto = require("crypto");
+
+
 // Exported routers
 const routers = require("./routes/index");
+
+
 
 //for crypto
 const KEY = crypto.randomBytes(32);
@@ -33,6 +37,10 @@ let io = socketIO(server, {
     credentials: true
   }
 });
+
+
+
+
 //Middlewares
 app.use(logger("combined"));
 app.use(bodyParser.json({ limit: bodyParserLimit }));
@@ -44,6 +52,8 @@ app.use(cors());
 routers.forEach((router) => {
   app.use(router.path, router.handler);
 });
+
+
 
 
 io.on('connection', (socket) => {
@@ -58,6 +68,9 @@ io.on('connection', (socket) => {
     console.log('userdisconnected');
     clearInterval(timer);
   });
+
+
+
 
   socket.on('message', (msg) => {
     const encryptedMessages = msg.split('|');
@@ -85,6 +98,10 @@ io.on('connection', (socket) => {
   });
 
 });
+
+
+
+
 
 dbService().connectDB();
 emitterService().startEmitter(KEY, IV);

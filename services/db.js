@@ -1,7 +1,7 @@
 
 const { MongoClient } = require('mongodb')
 // Connection URL
-const url = 'mongodb+srv://thewall:Webking12$@cluster0.6fllb.mongodb.net/encrypted-timeseries-db?retryWrites=true&w=majority'
+const url = 'mongodb+srv://ranjandibya34512:dibya123@cluster0.jpnlk3b.mongodb.net/?retryWrites=true&w=majority'
 const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true })
 
 
@@ -47,6 +47,8 @@ const dbService = () => {
     };
 
 
+
+    
     return {
         connectDB,
         checkIfCollectionExists,

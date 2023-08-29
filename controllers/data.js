@@ -29,6 +29,7 @@ module.exports = {
             });
          }
     },
+    
     getSpecificTimeData: async (req, res, next) => {
         try{
             const {timestamp} = req.query;
@@ -48,7 +49,7 @@ module.exports = {
                 })
             }
 
-            
+
         }catch(err){
             return res.status(500).json({
                 status: false,
